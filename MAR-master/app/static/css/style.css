@@ -1,0 +1,566 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root {
+    --navbar-height: 60px;
+}
+
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+/* Logo */
+#logo img {
+    height: 54px;
+    margin: -5px -3px;
+}
+
+/* Navigation Links */
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li {
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: gold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#navbar ul li a:hover {
+    background-color: wheat;
+    color: black;
+}
+
+/* Right-Aligned Nav (Optional) */
+#navbar .rightNav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Mobile Menu - Hidden by default */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.line {
+    width: 30px;
+    height: 4px;
+    background-color: wheat;
+    margin: 6px 0;
+}
+
+/* Mobile Navigation Menu */
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 20px 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links li a {
+    padding: 10px;
+    color: wheat;
+    font-size: 1.2rem;
+}
+
+.nav-links li a:hover {
+    background-color: wheat;
+    color: black;
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 768px) {
+    /* Show burger menu */
+    .burger {
+        display: block;
+    }
+
+    /* Hide the default navigation */
+    #navbar ul {
+        display: none;
+    }
+
+    /* When burger is clicked, show the mobile menu */
+    #navbar .burger.active + .nav-links {
+        display: flex;
+    }
+
+    /* Align the mobile navigation links */
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Search Bar */
+#search {
+    padding: 4px 20px;
+    font-size: 15px;
+    border: 2px solid gold;
+    border-radius: 9px;
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    padding: 241px 13px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before {
+    content: "";
+    background: url('../img/child.jpg') no-repeat center center/cover;
+    position: absolute;
+    padding: 57px 0px;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+
+#home h1 {
+    color: black;
+    text-align: center;
+}
+
+#home p {
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Services Section */
+#services {
+    display: flex;
+    text-align: center;
+    padding: 12px 0px;
+    position: relative;
+}
+
+#services::before {
+    content: "";
+    position: absolute;
+    background: url('../img/greenery.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#services .box {
+    border: 2px solid brown;
+    padding: 10px;
+    margin: 30px 24px;
+    border-radius: 36px;
+    background: rgb(220, 195, 162);
+}
+
+#services .box img {
+    height: 160px;
+    margin: auto;
+    display: block;
+}
+
+/* MOOCS Section */
+#moocs-section {
+    position: relative;
+}
+
+#moocs-section::before {
+    content: "";
+    position: absolute;
+    background: url('../img/wheat.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#moocs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#moocs .moocs-item {
+    padding: 10px;
+    margin: 30px 2px;
+}
+
+#moocs .moocs-item img {
+    height: 135px;
+    margin: auto;
+    display: block;
+}
+
+/* Contact Section */
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    background: url('../img/telescope.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+#contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+
+#contact-box input, #contact-box textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid rgb(105, 20, 105);
+    border-radius: 9.9px;
+    font-size: 1rem;
+}
+
+#contact-box form {
+    width: 40%;
+}
+
+#contact-box label {
+    font-size: 1.2rem;
+}
+
+footer {
+    background: black;
+    color: wheat;
+    padding: 9px 20px;
+}
+
+/* Login Page */
+#login {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 90px;
+}
+
+#login::before {
+    content: "";
+    position: absolute;
+    background: url('../img/sunset.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 34px;
+}
+
+#login-box input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid rgb(105, 20, 105);
+    border-radius: 9.9px;
+    font-size: 1.2rem;
+}
+
+#login-box form {
+    width: 70%;
+}
+
+#login .form-group {
+    padding: 15px;
+}
+
+#login-box label {
+    font-size: 1.5rem;
+    color: bisque;
+}
+
+#login ul a {
+    color: bisque;
+    display: block;
+    font-size: 1.5rem;
+    padding: 3px 20px;
+    border-radius: 90px;
+    text-decoration: none;
+}
+
+#login ul a:hover {
+    color: black;
+    background-color: wheat;
+}
+
+/* Submission Portal */
+#submission {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 90px;
+}
+
+#submission::before {
+    content: "";
+    position: absolute;
+    background: url('../img/mist.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+#submission-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 34px;
+}
+
+#submission-box input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid rgb(105, 20, 105);
+    border-radius: 9.9px;
+    font-size: 1.2rem;
+}
+
+#submission-box form {
+    width: 70%;
+}
+
+#submission .form-group {
+    padding: 15px;
+}
+
+#submission-box label {
+    font-size: 1.5rem;
+    color: black;
+}
+
+#submission ul a {
+    color: black;
+    display: block;
+    font-size: 1.5rem;
+    padding: 3px 20px;
+    border-radius: 90px;
+    text-decoration: none;
+}
+
+#submission ul a:hover {
+    color: wheat;
+    background-color: black;
+}
+
+/* Utility Classes */
+.h-primary {
+    font-size: 2rem;
+    padding: -5px;
+}
+
+.h-primary-login {
+    font-size: 4rem;
+    color: wheat;
+    padding: 20px 46px;
+}
+
+.h-primary-submission {
+    font-size: 4rem;
+    color: white;
+    padding: 20px 46px;
+}
+
+.h-secondary {
+    font-size: 1.2rem;
+    padding: -5px;
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid rgb(85, 9, 85);
+    background-color: burlywood;
+    color: black;
+    margin: 17px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-submission {
+    padding: 6px 20px;
+    border: 2px solid rgb(85, 9, 85);
+    background-color: black;
+    color: wheat;
+    margin: 17px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    padding: 6px 20px;
+    border: 2px solid rgb(103, 3, 103);
+    background-color: rgb(124, 124, 124);
+    color: black;
+    margin: 12px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
+
+.burger {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 15px;
+}
+
+.line {
+    width: 33px;
+    background-color: wheat;
+    height: 4px;
+    margin: 5px 3px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1122px) {
+    /* Navigation */
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+    }
+
+    #navbar ul li a {
+        padding: 10px 22px;
+        font-size: 1.05rem;
+    }
+
+    #navbar .rightNav {
+        text-align: center;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .v-class {
+        opacity: 0;
+        height: 30px;
+    }
+
+    /* Home */
+    #home {
+        height: 100%;
+        padding: 294px 11px;
+    }
+
+    #home::before {
+        height: 880px;
+        padding: 162px 0px;
+    }
+
+    #home p {
+        font-size: 0.8rem;
+    }
+
+    /* Services */
+    #services {
+        flex-direction: column;
+    }
+
+    /* MOOCS */
+    #moocs {
+        flex-wrap: wrap;
+    }
+
+    #moocs img {
+        height: auto;
+        padding: 2px 30px;
+    }
+
+    /* Contact Us */
+    #contact-box form {
+        width: 70%;
+    }
+
+    /* Utility Classes */
+    .h-primary {
+        font-size: 1.6rem;
+    }
+
+    .h-primary-login {
+        font-size: 3rem;
+        padding: 20px 46px;
+    }
+
+    .btn {
+        font-size: 1.5rem;
+        padding: 4px 9px;
+    }
+}

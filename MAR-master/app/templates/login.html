@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAR Login | MyMAR.com</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <section id="login">
+        <h1 class="h-primary-login center">Login / Sign in</h1>
+        <div id="login-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="e-mail">E-mail: </label>
+                    <input type="email" name="email" id="e-mail" placeholder="Enter your e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="OR">OR </label>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone: </label>
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                </div>
+                <ul>
+                    <a href="#forgotPassword">Forgot Password?</a>
+                </ul>
+                <button class="btn">Login/Sign In</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>MAR Login | MyMAR.com</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ </head>
+ <body>
+     <section id="login">
+         <h1 class="h-primary-login center">Login / Sign in</h1>
+         <div id="login-box">
+             <form action="{{ url_for('login') }}" method="post">
+                 <div class="form-group">
+                     <label for="username">Username: </label>
+                     <input type="text" name="username" id="username" placeholder="Enter your username" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="password">Password: </label>
+                     <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                 </div>
+                 <ul>
+                    <a href="{{ url_for('forgot_password') }}">Forgot
+                 </ul>
+                 <button class="btn">Login/Sign In</button>
+             </form>
+         </div>
+     </section>
+ </body>
+ </html>
+ 

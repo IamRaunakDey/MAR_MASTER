@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Files | MyMAR.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section id="admin">
+        <h1 class="h-primary-admin center">Admin - View Files</h1>
+        <div id="files-box">
+            <ul>
+                {% for file in files %}
+                <li><a href="{{ url_for('static', filename='uploads/' ~ file) }}" target="_blank">{{ file }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <h1>Admin Portal</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Activity</th>
+                <th>Duration</th>
+                <th>Points</th>
+                <th>Times Participated</th>
+                <th>Total Points</th>
+                <th>File</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for submission in submission_data %}
+            <tr>
+                <td>{{ submission.student_id }}</td>
+                <td>{{ submission.activity }}</td>
+                <td>{{ submission.duration }}</td>
+                <td>{{ submission.points }}</td>
+                <td>{{ submission.participated }}</td>
+                <td>{{ submission.total_points }}</td>
+                <td><a href="{{ url_for('static', filename='uploads/' + submission.file) }}" target="_blank">View File</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
